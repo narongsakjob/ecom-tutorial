@@ -2,11 +2,17 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import profile
+from .models import Profile, UserStripe
 
 # Register your models here.
-class profileAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
 	class Meta:
-		model = profile
+		model = Profile
 
-admin.site.register(profile, profileAdmin)
+admin.site.register(Profile, ProfileAdmin)
+
+class UserStripeAdmin(admin.ModelAdmin):
+    class meta:
+        model = UserStripe
+
+admin.site.register(UserStripe, UserStripeAdmin)
